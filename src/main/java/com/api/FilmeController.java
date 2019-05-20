@@ -31,19 +31,4 @@ public class FilmeController {
         filmeRepository.save(filme);
     }
 
-    @GetMapping("/filmes/{id}")
-    public Optional<Filme> getFilme(@PathVariable Long id) {
-        return filmeRepository.findById(id);
-    }
-
-    @DeleteMapping("/filmes/{id}")
-    public void delete(@PathVariable Long id){
-        filmeRepository.deleteById(id);
-    }
-
-    @PutMapping("/filmes")
-    public void update(@RequestBody Filme filme){
-        filmeRepository.save(filme);
-    }
-
 }
