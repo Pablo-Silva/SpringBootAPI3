@@ -26,16 +26,16 @@ public class CatracaController {
     }
 
     @GetMapping("/catraca/qrcode")
-    public String getByQrCode(@RequestBody String qrCode) {
+    public String getByQrCode(@RequestBody Catraca catraca) {
         String liberado = null;
 
-        Gson gson = new Gson();
+        //Gson gson = new Gson();
 
-        Catraca catraca = gson.fromJson(qrCode, Catraca.class);
+        //Catraca catraca = gson.fromJson(qrCode, Catraca.class);
 
         if (catraca.getQrCode() != null && catraca.getQrCode().length() > 0){
-            catraca = catracaRepository.findByQrCode(catraca.getQrCode());
-            if (catraca != null) {
+            Catraca catracaAux = catracaRepository.findByQrCode(catraca.getQrCode());
+            if (catracaAux != null) {
                 liberado = "Sucesso";
             } else{
                 liberado = "Falhou";
