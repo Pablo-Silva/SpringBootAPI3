@@ -48,27 +48,27 @@ public class CatracaService {
         }
     }
 
-    public String getByQrCode(String qrCode){
-
-        String liberado = null;
-
-        Gson gson = new Gson();
-
-        Catraca catraca = gson.fromJson(qrCode, Catraca.class);
-
-        if (catraca.getQrCode() != null && catraca.getQrCode().length() > 0){
-            catraca = catracaRepository.findByQrCode(catraca.getQrCode());
-            if (catraca != null) {
-                liberado = "Sucesso";
-            } else{
-                liberado = "Falhou";
-            }
-        }
-
-        else{
-            liberado = "Falhou";
-        }
-        return liberado;
-    }
+//    public String getByQrCode(String qrCode){
+//
+//        String liberado = null;
+//
+//        Gson gson = new Gson();
+//
+//        Catraca catraca = gson.fromJson(qrCode, Catraca.class);
+//
+//        if (catraca.getQrCode() != null && catraca.getQrCode().length() > 0){
+//            catraca = catracaRepository.findByQrCode(catraca.getQrCode());
+//            if (catraca != null) {
+//                liberado = "Sucesso";
+//            } else{
+//                liberado = "Falhou";
+//            }
+//        }
+//
+//        else{
+//            liberado = "Falhou";
+//        }
+//        return liberado;
+//    }
 }
 
